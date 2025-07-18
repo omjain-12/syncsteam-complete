@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube-Twitter Platform - Complete Learning Plan</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+        border-radius: 15px;
+        color: white;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+      }
+
+      .phase {
+        margin-bottom: 50px;
+        border: 2px solid #e0e0e0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .phase-header {
+        padding: 20px;
+        font-size: 1.8em;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+
+      .phase-1 .phase-header {
+        background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      }
+
+      .phase-2 .phase-header {
+        background: linear-gradient(135deg, #a8edea, #fed6e3);
+      }
+
+      .phase-3 .phase-header {
+        background: linear-gradient(135deg, #d299c2, #fed6e3);
+      }
+
+      .phase-content {
+        padding: 30px;
+        background: #fafafa;
+      }
+
+      .tech-stack {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .tech-item {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #4ecdc4;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-item h4 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .tech-item ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .tech-item li {
+        padding: 5px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .tech-item li:before {
+        content: "▶";
+        color: #4ecdc4;
+        position: absolute;
+        left: 0;
+      }
+
+      .module {
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .module-header {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px 20px;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      .module-content {
+        padding: 20px;
+      }
+
+      .module-purpose {
+        background: #e8f4fd;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border-left: 4px solid #3498db;
+      }
+
+      .key-concepts {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #28a745;
+      }
+
+      .key-concepts h4 {
+        color: #28a745;
+        margin-bottom: 10px;
+      }
+
+      .concept-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .concept-item {
+        background: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        font-size: 0.95em;
+      }
+
+      .mermaid-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        border: 2px solid #e0e0e0;
+        text-align: center;
+      }
+
+      .advanced-topics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .topic-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        border-top: 5px solid #ff6b6b;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .topic-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .topic-card h4 {
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+      }
+
+      .topic-card ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .topic-card li {
+        padding: 8px 0;
+        padding-left: 25px;
+        position: relative;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .topic-card li:before {
+        content: "✓";
+        color: #28a745;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .navigation {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .navigation a {
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #333;
+        border-radius: 5px;
+        margin: 5px 0;
+        transition: background 0.3s ease;
+      }
+
+      .navigation a:hover {
+        background: #4ecdc4;
+        color: white;
+      }
+
+      .progress-tracker {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .progress-tracker h3 {
+        margin-bottom: 15px;
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .checklist-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .checklist-item input[type="checkbox"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          margin: 10px;
+          padding: 15px;
+        }
+
+        .header h1 {
+          font-size: 2em;
+        }
+
+        .navigation {
+          display: none;
+        }
+
+        .tech-stack,
+        .concept-list,
+        .advanced-topics {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <h4>Quick Navigation</h4>
+      <a href="#phase1">Phase 1: Architecture</a>
+      <a href="#phase2">Phase 2: Modules</a>
+      <a href="#phase3">Phase 3: Advanced</a>
+      <a href="#progress">Progress Tracker</a>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>🎥 YouTube-Twitter Platform</h1>
+        <p>Complete Learning Plan & Architecture Guide</p>
+        <p>
+          <strong>Technology Stack:</strong> MERN (MongoDB, Express.js, React,
+          Node.js) + Cloudinary + JWT
+        </p>
+      </div>
+
+      <!-- Phase 1: High-Level Architecture Overview -->
+      <div class="phase phase-1" id="phase1">
+        <div class="phase-header">
+          Phase 1: High-Level Architecture Overview
+        </div>
+        <div class="phase-content">
+          <h3>🎯 Project Summary</h3>
+          <p
+            style="
+              font-size: 1.1em;
+              margin-bottom: 20px;
+              padding: 15px;
+              background: #e8f4fd;
+              border-radius: 8px;
+            "
+          >
+            This is a
+            <strong
+              >full-stack video streaming and social media platform</strong
+            >
+            that combines YouTube-like video sharing with Twitter-like social
+            interactions. The project creates an integrated platform where users
+            can upload, watch, and interact with video content while engaging
+            through tweets and social features.
+          </p>
+
+          <h3>🛠️ Technology Stack Breakdown</h3>
+          <div class="tech-stack">
+            <div class="tech-item">
+              <h4>🔧 Backend Technologies</h4>
+              <ul>
+                <li>Node.js with Express.js</li>
+                <li>MongoDB with Mongoose ODM</li>
+                <li>JWT for authentication</li>
+                <li>Bcrypt for password hashing</li>
+                <li>Multer for file uploads</li>
+                <li>Morgan for logging</li>
+              </ul>
+            </div>
+            <div class="tech-item">
+              <h4>⚛️ Frontend Technologies</h4>
+              <ul>
+                <li>React.js with Vite build tool</li>
+                <li>Redux Toolkit for state management</li>
+                <li>Tailwind CSS for styling</li>
+                <li>React Router for navigation</li>
+                <li>Axios for API calls</li>
+                <li>React Hook Form</li>
+              </ul>
+            </div>
+            <div class="tech-item">
+              <h4>☁️ External Services</h4>
+              <ul>
+                <li>Cloudinary for media storage</li>
+                <li>MongoDB Atlas (cloud database)</li>
+                <li>Vercel for frontend deployment</li>
+                <li>Railway/Heroku for backend</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>🏗️ System Architecture Diagram</h3>
+          <div class="mermaid-container">
+            <div class="mermaid">
+              graph TB subgraph "Frontend Layer" UI[React Frontend<br />- Vite
+              Build Tool<br />- Redux Toolkit<br />- Tailwind CSS] end subgraph
+              "Backend Layer" API[Express.js API Server<br />- RESTful
+              Endpoints<br />- JWT Authentication<br />- File Upload Handling]
+              MW[Middleware Layer<br />- Auth Middleware<br />- Multer File
+              Upload<br />- CORS, Morgan] end subgraph "Database Layer"
+              DB[(MongoDB<br />Database<br />"silvertube")] end subgraph
+              "External Services" CLOUD[Cloudinary<br />Video & Image Storage]
+              end subgraph "Core Features" AUTH[Authentication System]
+              VIDEO[Video Management] SOCIAL[Social Features<br />- Comments<br />-
+              Likes<br />- Subscriptions] TWEET[Tweet System] DASH[Dashboard &
+              Analytics] end UI <-->|HTTP/HTTPS Requests| API API <--> MW API
+              <-->|Mongoose ODM| DB API <-->|File Upload/Storage| CLOUD API -->
+              AUTH API --> VIDEO API --> SOCIAL API --> TWEET API --> DASH
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: Detailed Learning Plan -->
+      <div class="phase phase-2" id="phase2">
+        <div class="phase-header">
+          Phase 2: Detailed Learning Plan (Core Modules)
+        </div>
+        <div class="phase-content">
+          <!-- Module 1 -->
+          <div class="module">
+            <div class="module-header">📋 Module 1: Setup & Tooling</div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Purpose:</strong> Understanding the development
+                environment and build tools
+              </div>
+              <div class="key-concepts">
+                <h4>🎯 Key Concepts to Learn:</h4>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  📦 Package Management & Scripts
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📄 package.json structure and dependencies analysis
+                  </div>
+                  <div class="concept-item">
+                    🔧 npm scripts: dev, build, start, lint configuration
+                  </div>
+                  <div class="concept-item">
+                    📚 Understanding devDependencies vs dependencies
+                  </div>
+                  <div class="concept-item">
+                    🔒 Package-lock.json and version control best practices
+                  </div>
+                  <div class="concept-item">
+                    ⚡ Script automation and custom commands
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  ⚡ Build Tools & Development
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🚀 Vite configuration and plugin system
+                  </div>
+                  <div class="concept-item">
+                    🔄 Hot Module Replacement (HMR) setup
+                  </div>
+                  <div class="concept-item">
+                    📦 Bundle optimization and code splitting strategies
+                  </div>
+                  <div class="concept-item">
+                    🔧 Nodemon configuration for backend auto-restart
+                  </div>
+                  <div class="concept-item">
+                    🎨 PostCSS and Tailwind CSS integration
+                  </div>
+                  <div class="concept-item">
+                    🧪 ESLint and Prettier configuration
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🌍 Environment & Configuration
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    ⚙️ Environment variables (.env) setup and management
+                  </div>
+                  <div class="concept-item">
+                    🔒 Secrets management and security practices
+                  </div>
+                  <div class="concept-item">
+                    📝 ES6 modules vs CommonJS ("type": "module")
+                  </div>
+                  <div class="concept-item">
+                    🌐 CORS configuration for cross-origin requests
+                  </div>
+                  <div class="concept-item">
+                    📊 Morgan HTTP request logging setup
+                  </div>
+                  <div class="concept-item">
+                    🚀 Production vs Development environment configs
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="module">
+            <div class="module-header">
+              🔧 Module 2: Backend API & Business Logic
+            </div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Purpose:</strong> Understanding the server architecture
+                and API design patterns
+              </div>
+              <div class="key-concepts">
+                <h4>🎯 Key Concepts to Learn:</h4>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🏗️ Express.js Architecture
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📁 Project structure: app.js vs index.js separation
+                  </div>
+                  <div class="concept-item">
+                    🛣️ Router-based modular architecture
+                  </div>
+                  <div class="concept-item">
+                    🔧 Middleware chain and execution order
+                  </div>
+                  <div class="concept-item">
+                    ⚙️ Application configuration and setup
+                  </div>
+                  <div class="concept-item">
+                    🌐 CORS, body parsing, static file serving
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🎯 RESTful API Design
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📋 API versioning strategy (/api/v1/)
+                  </div>
+                  <div class="concept-item">
+                    🔗 Resource-based URL structure
+                  </div>
+                  <div class="concept-item">
+                    📝 HTTP methods: GET, POST, PUT, DELETE, PATCH
+                  </div>
+                  <div class="concept-item">
+                    📊 Response status codes and conventions
+                  </div>
+                  <div class="concept-item">
+                    🎛️ Query parameters and pagination
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🎮 Controller Pattern
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📋 Business logic separation in controllers
+                  </div>
+                  <div class="concept-item">
+                    🔄 AsyncHandler wrapper for error handling
+                  </div>
+                  <div class="concept-item">
+                    ✅ Input validation and sanitization
+                  </div>
+                  <div class="concept-item">
+                    📤 Standardized API response structure
+                  </div>
+                  <div class="concept-item">
+                    🛡️ Error handling and custom error classes
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  📁 File Upload System
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📎 Multer middleware configuration
+                  </div>
+                  <div class="concept-item">
+                    ☁️ Cloudinary integration for media storage
+                  </div>
+                  <div class="concept-item">
+                    🔍 File validation (type, size, format)
+                  </div>
+                  <div class="concept-item">
+                    🗂️ Multiple file uploads and field handling
+                  </div>
+                  <div class="concept-item">
+                    🧹 Temporary file cleanup and optimization
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="module">
+            <div class="module-header">
+              🗄️ Module 3: Database & Data Modeling
+            </div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Purpose:</strong> Understanding data relationships and
+                MongoDB schema design patterns
+              </div>
+              <div class="key-concepts">
+                <h4>🎯 Key Concepts to Learn:</h4>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🎯 MongoDB Schema Design
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📋 Schema definition with Mongoose
+                  </div>
+                  <div class="concept-item">
+                    🔗 Relationship modeling (One-to-Many, Many-to-Many)
+                  </div>
+                  <div class="concept-item">
+                    📝 Data validation and schema constraints
+                  </div>
+                  <div class="concept-item">
+                    🏷️ Indexing strategies for performance
+                  </div>
+                  <div class="concept-item">🔧 Schema methods and virtuals</div>
+                  <div class="concept-item">
+                    📊 Timestamps and auto-generated fields
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  👤 User Management System
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🔐 Password hashing with bcrypt
+                  </div>
+                  <div class="concept-item">
+                    🎫 JWT token generation and validation
+                  </div>
+                  <div class="concept-item">
+                    🔄 Refresh token rotation mechanism
+                  </div>
+                  <div class="concept-item">
+                    📸 Avatar and cover image management
+                  </div>
+                  <div class="concept-item">
+                    📋 User profile and watch history
+                  </div>
+                  <div class="concept-item">
+                    ✅ Email and username uniqueness
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🎥 Video & Media Management
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">📹 Video file metadata storage</div>
+                  <div class="concept-item">
+                    🖼️ Thumbnail and preview management
+                  </div>
+                  <div class="concept-item">
+                    ⏱️ Duration, views, and engagement tracking
+                  </div>
+                  <div class="concept-item">
+                    📝 Video descriptions and SEO optimization
+                  </div>
+                  <div class="concept-item">
+                    🚀 Publishing status and privacy controls
+                  </div>
+                  <div class="concept-item">
+                    ☁️ Cloudinary integration patterns
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🤝 Social Features Data Model
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    💬 Comments system with nested replies
+                  </div>
+                  <div class="concept-item">
+                    👍 Like/Dislike polymorphic relationships
+                  </div>
+                  <div class="concept-item">
+                    🔔 Subscription and notification system
+                  </div>
+                  <div class="concept-item">
+                    📋 Playlist creation and management
+                  </div>
+                  <div class="concept-item">🐦 Tweet system integration</div>
+                  <div class="concept-item">
+                    📊 Analytics and reporting data structures
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  ⚡ Database Optimization
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🚀 Aggregation pipelines for complex queries
+                  </div>
+                  <div class="concept-item">
+                    📄 Pagination with mongoose-aggregate-paginate
+                  </div>
+                  <div class="concept-item">
+                    🔍 Text search and indexing strategies
+                  </div>
+                  <div class="concept-item">
+                    📊 Database connection and error handling
+                  </div>
+                  <div class="concept-item">
+                    🎯 Query optimization and performance tuning
+                  </div>
+                </div>
+              </div>
+
+              <h3>📊 Entity-Relationship Diagram (ERD)</h3>
+              <div class="mermaid-container">
+                <div class="mermaid">
+                  erDiagram User ||--o{ Video : owns User ||--o{ Tweet : creates
+                  User ||--o{ Comment : writes User ||--o{ Like : gives User
+                  ||--o{ Subscription : subscribes User ||--o{ Subscription :
+                  "receives subscription" User ||--o{ Playlist : creates Video
+                  ||--o{ Comment : "receives comments" Video ||--o{ Like :
+                  "receives likes" Video }o--o{ Playlist : "belongs to" Tweet
+                  ||--o{ Like : "receives likes" User { ObjectId _id PK string
+                  username UK string email UK string fullName object avatar
+                  object coverImage array watchHistory string password string
+                  refreshToken date createdAt date updatedAt } Video { ObjectId
+                  _id PK object videoFile object thumbnail ObjectId owner FK
+                  string title string description number duration number views
+                  boolean isPublished date createdAt date updatedAt } Comment {
+                  ObjectId _id PK string content ObjectId video FK ObjectId
+                  owner FK date createdAt date updatedAt } Like { ObjectId _id
+                  PK ObjectId video FK ObjectId comment FK ObjectId tweet FK
+                  ObjectId likedBy FK date createdAt date updatedAt }
+                  Subscription { ObjectId _id PK ObjectId subscriber FK ObjectId
+                  channel FK date createdAt date updatedAt } Tweet { ObjectId
+                  _id PK string content ObjectId owner FK date createdAt date
+                  updatedAt } Playlist { ObjectId _id PK string name string
+                  description ObjectId owner FK array videos date createdAt date
+                  updatedAt }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="module">
+            <div class="module-header">⚛️ Module 4: Frontend Application</div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Purpose:</strong> Understanding React component
+                architecture, state management, and user interface development
+              </div>
+              <div class="key-concepts">
+                <h4>🎯 Key Concepts to Learn:</h4>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  ⚛️ React Architecture
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🏗️ Component-based architecture design
+                  </div>
+                  <div class="concept-item">
+                    🎯 Functional components and React Hooks
+                  </div>
+                  <div class="concept-item">
+                    🔄 Component lifecycle and useEffect patterns
+                  </div>
+                  <div class="concept-item">
+                    📋 Props drilling vs Context API
+                  </div>
+                  <div class="concept-item">
+                    🎨 Component composition and reusability
+                  </div>
+                  <div class="concept-item">
+                    ⚡ Performance optimization with React.memo
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🛣️ Routing & Navigation
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🔗 React Router DOM setup and configuration
+                  </div>
+                  <div class="concept-item">
+                    🛡️ Protected routes and AuthLayout component
+                  </div>
+                  <div class="concept-item">
+                    📱 Dynamic routing and route parameters
+                  </div>
+                  <div class="concept-item">
+                    🧭 Programmatic navigation and history API
+                  </div>
+                  <div class="concept-item">
+                    📄 Nested routing and layout components
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🏪 State Management
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📦 Redux Toolkit setup and configuration
+                  </div>
+                  <div class="concept-item">
+                    🔄 createSlice and reducers pattern
+                  </div>
+                  <div class="concept-item">
+                    ⚡ createAsyncThunk for API calls
+                  </div>
+                  <div class="concept-item">
+                    🗂️ Store structure and slice organization
+                  </div>
+                  <div class="concept-item">
+                    🎯 useSelector and useDispatch hooks
+                  </div>
+                  <div class="concept-item">
+                    💾 Local state vs global state decisions
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  📡 API Integration
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🌐 Axios setup and interceptors
+                  </div>
+                  <div class="concept-item">
+                    🔑 Authentication header management
+                  </div>
+                  <div class="concept-item">
+                    ⚠️ Error handling and toast notifications
+                  </div>
+                  <div class="concept-item">
+                    🔄 Loading states and user feedback
+                  </div>
+                  <div class="concept-item">
+                    📊 Data fetching patterns and caching
+                  </div>
+                  <div class="concept-item">
+                    📁 FormData handling for file uploads
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  📝 Form Management
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📋 React Hook Form setup and validation
+                  </div>
+                  <div class="concept-item">
+                    ✅ Input validation and error messages
+                  </div>
+                  <div class="concept-item">
+                    📷 File upload and preview components
+                  </div>
+                  <div class="concept-item">
+                    🔄 Form submission and async handling
+                  </div>
+                  <div class="concept-item">
+                    🎨 Custom input components and styling
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🎨 UI/UX Implementation
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🎯 Tailwind CSS utility-first approach
+                  </div>
+                  <div class="concept-item">
+                    📱 Responsive design and mobile optimization
+                  </div>
+                  <div class="concept-item">
+                    ♾️ Infinite scrolling with react-infinite-scroll
+                  </div>
+                  <div class="concept-item">
+                    🎥 Video player integration and controls
+                  </div>
+                  <div class="concept-item">
+                    🌙 Dark/Light mode implementation
+                  </div>
+                  <div class="concept-item">
+                    🔍 Search functionality and filters
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="module">
+            <div class="module-header">
+              🔐 Module 5: Authentication Flow (End-to-End Feature)
+            </div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Feature Selected:</strong> Complete User Authentication
+                System - A deep dive into full-stack authentication
+              </div>
+
+              <div class="key-concepts">
+                <h4>🎯 Authentication System Components:</h4>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🔐 Backend Authentication
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🔑 JWT token generation (access + refresh tokens)
+                  </div>
+                  <div class="concept-item">
+                    🛡️ Password hashing with bcrypt salt rounds
+                  </div>
+                  <div class="concept-item">
+                    🔒 Middleware for route protection (verifyJWT)
+                  </div>
+                  <div class="concept-item">
+                    🔄 Token refresh mechanism and rotation
+                  </div>
+                  <div class="concept-item">
+                    🍪 Cookie-based authentication setup
+                  </div>
+                  <div class="concept-item">
+                    🚫 Logout functionality and token invalidation
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  ⚛️ Frontend Authentication
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🏪 Auth state management with Redux
+                  </div>
+                  <div class="concept-item">
+                    🔐 Login/Register form implementation
+                  </div>
+                  <div class="concept-item">
+                    🛡️ Protected route components (AuthLayout)
+                  </div>
+                  <div class="concept-item">
+                    🔄 Automatic token refresh on API calls
+                  </div>
+                  <div class="concept-item">
+                    💾 Persistent login with localStorage
+                  </div>
+                  <div class="concept-item">🚪 Logout and session cleanup</div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🔗 Authentication Flow Steps
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    📝 User registration with avatar upload
+                  </div>
+                  <div class="concept-item">
+                    ✅ Email/username validation and uniqueness
+                  </div>
+                  <div class="concept-item">
+                    🎫 Token generation and secure storage
+                  </div>
+                  <div class="concept-item">
+                    🔍 User verification and profile retrieval
+                  </div>
+                  <div class="concept-item">
+                    ⚡ Automatic session restoration on app load
+                  </div>
+                  <div class="concept-item">
+                    🔒 Session expiry and renewal handling
+                  </div>
+                </div>
+
+                <h5
+                  style="
+                    color: #667eea;
+                    margin: 20px 0 10px 0;
+                    font-size: 1.1em;
+                  "
+                >
+                  🛡️ Security Considerations
+                </h5>
+                <div class="concept-list">
+                  <div class="concept-item">
+                    🔐 HTTPS and secure cookie configuration
+                  </div>
+                  <div class="concept-item">
+                    🛡️ CSRF protection and secure headers
+                  </div>
+                  <div class="concept-item">
+                    ⏰ Token expiration and rotation strategy
+                  </div>
+                  <div class="concept-item">
+                    🚫 Brute force protection mechanisms
+                  </div>
+                  <div class="concept-item">
+                    📝 Input validation and sanitization
+                  </div>
+                  <div class="concept-item">
+                    🔍 Security audit and vulnerability testing
+                  </div>
+                </div>
+              </div>
+
+              <h3>🔄 Complete Authentication Sequence Diagram</h3>
+              <div class="mermaid-container">
+                <div class="mermaid">
+                  sequenceDiagram participant U as User participant FE as React
+                  Frontend participant API as Express API participant MW as Auth
+                  Middleware participant DB as MongoDB participant CLOUD as
+                  Cloudinary Note over U,CLOUD: User Registration Flow U->>FE:
+                  Fill registration form + upload avatar FE->>API: POST
+                  /api/v1/users/register API->>CLOUD: Upload avatar image
+                  CLOUD-->>API: Return image URL & public_id API->>DB: Create
+                  user with hashed password DB-->>API: Return user document
+                  API->>API: Generate JWT tokens API-->>FE: Return user data +
+                  tokens FE->>FE: Store user in Redux + localStorage FE-->>U:
+                  Redirect to dashboard Note over U,CLOUD: Protected Route
+                  Access U->>FE: Navigate to protected page FE->>FE: Check auth
+                  state in Redux FE->>API: GET /api/v1/users/current-user
+                  API->>MW: Verify JWT token MW->>DB: Find user by decoded token
+                  DB-->>MW: Return user data MW-->>API: Attach user to request
+                  API-->>FE: Return current user data FE-->>U: Show protected
+                  content Note over U,CLOUD: Token Refresh Flow FE->>API:
+                  Request with expired access token API-->>FE: 401 Unauthorized
+                  FE->>API: POST /api/v1/users/refresh-token API->>DB: Verify
+                  refresh token DB-->>API: Return user if valid API->>API:
+                  Generate new access token API-->>FE: Return new tokens
+                  FE->>FE: Update stored tokens FE->>API: Retry original request
+                  API-->>FE: Success response
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="module">
+            <div class="module-header">
+              🎥 Module 6: Core Features Implementation
+            </div>
+            <div class="module-content">
+              <div class="module-purpose">
+                <strong>Purpose:</strong> Understanding the implementation of core platform features and business logic
+              </div>
+              
+              <div class="key-concepts">
+                <h4>🎯 Core Features Deep Dive:</h4>
+                
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">🎬 Video Management System</h5>
+                <div class="concept-list">
+                  <div class="concept-item">📹 Video upload pipeline and validation</div>
+                  <div class="concept-item">🖼️ Thumbnail generation and management</div>
+                  <div class="concept-item">📊 Video metadata and analytics tracking</div>
+                  <div class="concept-item">🔒 Privacy controls and publishing workflow</div>
+                  <div class="concept-item">🎯 Video recommendation algorithms</div>
+                  <div class="concept-item">📱 Video player and streaming optimization</div>
+                  <div class="concept-item">⏱️ Duration tracking and view counting</div>
+                </div>
+
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">💬 Social Interaction Features</h5>
+                <div class="concept-list">
+                  <div class="concept-item">💭 Comment system with nested replies</div>
+                  <div class="concept-item">👍 Like/Dislike polymorphic functionality</div>
+                  <div class="concept-item">🔔 Subscription and notification system</div>
+                  <div class="concept-item">📤 Share functionality and social integration</div>
+                  <div class="concept-item">📊 Engagement metrics and analytics</div>
+                  <div class="concept-item">🛡️ Content moderation and reporting</div>
+                  <div class="concept-item">🌟 User interaction history tracking</div>
+                </div>
+
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">🐦 Twitter-like Features</h5>
+                <div class="concept-list">
+                  <div class="concept-item">📝 Tweet creation and management</div>
+                  <div class="concept-item">🔄 Timeline and feed generation algorithms</div>
+                  <div class="concept-item">👥 Follow/Unfollow functionality</div>
+                  <div class="concept-item">🔁 Retweet and quote tweet features</div>
+                  <div class="concept-item">🏷️ Hashtag and mention system</div>
+                  <div class="concept-item">🔍 Search and discovery features</div>
+                  <div class="concept-item">📈 Tweet engagement analytics</div>
+                </div>
+
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">📋 Playlist Management</h5>
+                <div class="concept-list">
+                  <div class="concept-item">📁 Playlist creation and organization</div>
+                  <div class="concept-item">🎵 Video ordering and queue management</div>
+                  <div class="concept-item">🤝 Playlist sharing and collaboration</div>
+                  <div class="concept-item">🔒 Privacy settings for playlists</div>
+                  <div class="concept-item">🎯 Auto-generated smart playlists</div>
+                  <div class="concept-item">🔄 Playlist synchronization features</div>
+                </div>
+
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">📊 Dashboard & Analytics</h5>
+                <div class="concept-list">
+                  <div class="concept-item">📈 Creator dashboard and analytics panel</div>
+                  <div class="concept-item">📊 Video performance metrics and insights</div>
+                  <div class="concept-item">👥 Audience insights and demographics</div>
+                  <div class="concept-item">💰 Revenue tracking and monetization tools</div>
+                  <div class="concept-item">📅 Content scheduling and management</div>
+                  <div class="concept-item">📋 Channel customization and branding</div>
+                  <div class="concept-item">🎯 Growth analytics and recommendations</div>
+                </div>
+
+                <h5 style="color: #667eea; margin: 20px 0 10px 0; font-size: 1.1em;">🔍 Search & Discovery</h5>
+                <div class="concept-list">
+                  <div class="concept-item">🔎 Full-text search implementation</div>
+                  <div class="concept-item">🏷️ Tag-based categorization system</div>
+                  <div class="concept-item">🎯 Content recommendation engine</div>
+                  <div class="concept-item">📊 Trending algorithms and metrics</div>
+                  <div class="concept-item">🔍 Advanced filtering and sorting</div>
+                  <div class="concept-item">🎪 Personalized content discovery</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3: Advanced Deep Dive Topics -->
+      <div class="phase phase-3" id="phase3">
+        <div class="phase-header">Phase 3: Advanced Deep Dive Topics</div>
+        <div class="phase-content">
+          <p
+            style="
+              font-size: 1.1em;
+              margin-bottom: 30px;
+              padding: 15px;
+              background: #fff3cd;
+              border-radius: 8px;
+              border-left: 4px solid #ffc107;
+            "
+          >
+            <strong>🎓 Advanced Topics:</strong> Explore these areas after
+            mastering the core modules to build production-ready, scalable
+            applications.
+          </p>
+
+          <div class="advanced-topics">
+            <div class="topic-card">
+              <h4>🧪 Testing Strategy</h4>
+              <ul>
+                <li>Unit Testing: Controllers, utilities, models</li>
+                <li>Integration Testing: API endpoints with DB</li>
+                <li>Frontend Testing: React Testing Library</li>
+                <li>E2E Testing: Critical user flows</li>
+                <li>Test Coverage and Automation</li>
+              </ul>
+            </div>
+
+            <div class="topic-card">
+              <h4>🔒 Security & Vulnerabilities</h4>
+              <ul>
+                <li>JWT token management & rotation</li>
+                <li>File upload security & validation</li>
+                <li>API security: Rate limiting, Helmet</li>
+                <li>NoSQL injection prevention</li>
+                <li>Input validation & sanitization</li>
+              </ul>
+            </div>
+
+            <div class="topic-card">
+              <h4>⚡ Performance Optimization</h4>
+              <ul>
+                <li>Database indexing strategies</li>
+                <li>Redis caching implementation</li>
+                <li>CDN optimization with Cloudinary</li>
+                <li>React code splitting & lazy loading</li>
+                <li>API pagination & compression</li>
+              </ul>
+            </div>
+
+            <div class="topic-card">
+              <h4>🚀 CI/CD & Deployment</h4>
+              <ul>
+                <li>Environment management</li>
+                <li>Docker containerization</li>
+                <li>Vercel frontend deployment</li>
+                <li>MongoDB Atlas setup</li>
+                <li>Monitoring & error tracking</li>
+              </ul>
+            </div>
+
+            <div class="topic-card">
+              <h4>🔥 Advanced Features</h4>
+              <ul>
+                <li>WebSocket real-time features</li>
+                <li>Video transcoding & quality options</li>
+                <li>Elasticsearch for search</li>
+                <li>Analytics dashboard implementation</li>
+                <li>Progressive Web App (PWA)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Tracker -->
+      <div class="progress-tracker" id="progress">
+        <h3>📈 Your Learning Progress Tracker</h3>
+        <p>Check off topics as you complete them to track your progress!</p>
+
+        <div class="checklist">
+          <div class="checklist-item">
+            <input type="checkbox" id="setup" />
+            <label for="setup">Setup & Tooling Complete</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="backend" />
+            <label for="backend">Backend API Understanding</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="database" />
+            <label for="database">Database & Models Mastery</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="frontend" />
+            <label for="frontend">Frontend Architecture</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="auth" />
+            <label for="auth">Authentication Flow</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="testing" />
+            <label for="testing">Testing Strategy</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="security" />
+            <label for="security">Security Implementation</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="performance" />
+            <label for="performance">Performance Optimization</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="deployment" />
+            <label for="deployment">Deployment & CI/CD</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="advanced" />
+            <label for="advanced">Advanced Features</label>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding: 20px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          color: white;
+          border-radius: 10px;
+        "
+      >
+        <h3>🎯 Ready to Start Learning?</h3>
+        <p style="font-size: 1.1em; margin: 10px 0">
+          Begin with any module that interests you most. Each module builds upon
+          the others, but you can start with the area you're most curious about!
+        </p>
+        <p style="font-size: 1.2em; font-weight: bold">
+          🚀 Happy Learning & Building! 🚀
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Initialize Mermaid
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "default",
+        flowchart: {
+          htmlLabels: true,
+          curve: "basis",
+        },
+        er: {
+          entityPadding: 15,
+          fill: "#f9f9f9",
+          fontSize: 12,
+          useMaxWidth: true,
+        },
+        sequence: {
+          diagramMarginX: 50,
+          diagramMarginY: 10,
+          actorMargin: 50,
+          width: 150,
+          height: 65,
+          boxMargin: 10,
+          boxTextMargin: 5,
+          noteMargin: 10,
+          messageMargin: 35,
+        },
+      });
+
+      // Progress tracker functionality
+      const checkboxes = document.querySelectorAll(
+        '.checklist input[type="checkbox"]'
+      );
+
+      // Load saved progress from localStorage
+      checkboxes.forEach((checkbox) => {
+        const saved = localStorage.getItem(checkbox.id);
+        if (saved === "true") {
+          checkbox.checked = true;
+        }
+      });
+
+      // Save progress to localStorage
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+          localStorage.setItem(this.id, this.checked);
+          updateProgressDisplay();
+        });
+      });
+
+      function updateProgressDisplay() {
+        const total = checkboxes.length;
+        const completed = Array.from(checkboxes).filter(
+          (cb) => cb.checked
+        ).length;
+        const percentage = Math.round((completed / total) * 100);
+
+        // You could add a progress bar here if desired
+        console.log(`Progress: ${completed}/${total} (${percentage}%)`);
+      }
+
+      // Smooth scrolling for navigation
+      document.querySelectorAll(".navigation a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>
