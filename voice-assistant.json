@@ -8,6 +8,7 @@
 		{ "command": "Do open folder",           "action": "vsc-command:vscode.openFolder" },
 		{ "command": "Do find class",            "action": "vsc-command:workbench.action.findInFiles", "args": [ { "query": "class" } ] },
 
+		
 		{ "command": "Put nothing",              "snippet": "" },
 		{ "command": "Put zero",                 "snippet": "0" },
 		{ "command": "Put one",                  "snippet": "1" },
